@@ -8,22 +8,21 @@
 	</head>
 
 
-	<body class="list-group" ng-controller="StoreController as store">
-	    <!--  Product Container  -->
-	    <div class="list-group-item" ng-repeat="product in store.products">
-			<h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+	<body ng-controller="StoreController as store">
+    <!--  Store Header  -->
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">– an Angular store –</h2>
+    </header>
 
-			<!-- Image Gallery  -->
-			<div class="gallery" ng-show="product.images.length">
-				<div class="img-wrap">
-					<img ng-src="{{product.images[0]}}" />
-				</div>
-				<ul class="img-thumbnails clearfix">
-					<li ng-repeat="image in product.images | limitTo:1" class="small-image pull-left thumbnail" >
-						<img ng-src="{{image}}" />
-					</li>
-				</ul>
-			</div>
-	    </div>
-	 </body>
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="product in store.product">
+        <p>{{product}}</p>
+
+        
+      </div>
+    </div>
+  </body>
 </html>
